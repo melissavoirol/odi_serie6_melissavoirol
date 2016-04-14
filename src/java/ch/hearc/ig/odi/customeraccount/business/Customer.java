@@ -13,6 +13,11 @@ public class Customer {
         this.accounts = new HashMap();
     }
 
+    public Customer(Integer number, String fn, String ln) {
+        this.number = number;
+        Individual ind = new Individual(number, fn, ln, null, null);
+    }
+
     public Map<String, Account> getAccounts() {
         return accounts;
     }

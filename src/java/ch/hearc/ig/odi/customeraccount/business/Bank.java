@@ -70,6 +70,12 @@ public class Bank {
         return this.customers.get(number);
     }
 
+    public Customer addCustomer(Integer number, String fn, String ln) {
+        Customer cust = new Customer(number, fn, ln);
+        customers.put(number, cust);
+        return cust;
+    }
+
     public Individual addIndividual(Integer number, String fn, String ln, Date birthDate, String email) {
         Individual ind = new Individual(number, fn, ln, birthDate, email);
         customers.put(number, ind);
