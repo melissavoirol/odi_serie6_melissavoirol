@@ -38,6 +38,8 @@
                 <h:outputLabel value="Enter individual email: " />
                 <h:inputText value="#{addCustomer.individualEmail}" />
                 <br/><br/>
+                <h:commandButton value="Submit" action="#{addCustomer}" />
+                <h:commandButton value="Cancel" action="#{index}" />
             </h:panelGrid>
         </h:form>
     </h:body>
