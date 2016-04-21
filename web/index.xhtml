@@ -6,7 +6,6 @@
         <title>#{msg['title']}</title>
     </h:head>
     <h:body>
-        <h:outputText value="#{msg['link']}"/>
-        <h:outputLink value="addCustomer.xhtml">Texte#{msg['ahref']}</h:outputLink>
+        <h:link value="#{msg['link']}" outcome="addCustomer.xhtml" />
     </h:body>
 </html>
