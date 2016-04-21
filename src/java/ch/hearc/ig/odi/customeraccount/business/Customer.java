@@ -5,8 +5,14 @@ import java.util.Map;
 
 public class Customer {
 
-    private Map<String, Account> accounts;  //Converti en Map car Collection<Account> accounts; depuis VP
     private int number;
+    private String firstName;
+    private String lastName;
+    private Map<String, Account> accounts;  //Converti en Map car Collection<Account> accounts; depuis VP
+
+    public Customer() {
+
+    }
 
     public Customer(Integer number) {
         this.number = number;
@@ -15,15 +21,9 @@ public class Customer {
 
     public Customer(Integer number, String fn, String ln) {
         this.number = number;
-        Individual ind = new Individual(number, fn, ln, null, null);
-    }
-
-    public Map<String, Account> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(Map<String, Account> accounts) {
-        this.accounts = accounts;
+        this.firstName = fn;
+        this.lastName = ln;
+        this.accounts = new HashMap();
     }
 
     public int getNumber() {
@@ -34,29 +34,41 @@ public class Customer {
         this.number = number;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Map<String, Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Map<String, Account> accounts) {
+        this.accounts = accounts;
+    }
+
     public Account getAccountByNumber(String number) {
-        return this.accounts.get(number);
+        return accounts.get(number);
     }
 
     public void addAccount(Account account) {
-        accounts.put(account.getNumber(), account);
+        this.accounts.put(account.getNumber(), account);
     }
 
-    //Méthode toString()
-    public String custToString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("Customer N°");
-        sb.append(this.number);
-        sb.append("\n");
-        sb.append("Accounts : ");
-        for (Account acc : this.accounts.values()) {
-            sb.append(acc.accToString());
-            Bank.nbAcc = Bank.nbAcc + 1;
-        }
-        sb.append("\n");
-
-        return sb.toString();
+    @Override
+    public String toString() {
+        return "Customer{" + "number=" + number + ", firstName=" + firstName + ", lastName=" + lastName + '}';
     }
 
 }

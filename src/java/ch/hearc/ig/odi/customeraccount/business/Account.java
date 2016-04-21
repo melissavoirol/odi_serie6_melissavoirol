@@ -72,20 +72,9 @@ public class Account {
         target.credit(amount);
     }
 
-    //Méthode toString()
-    public String accToString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("\n");
-        sb.append("Account N°");
-        sb.append(this.number);
-        sb.append("     ");
-        sb.append("Name : ");
-        sb.append(this.name);
-        sb.append("    Solde: ");
-        sb.append(this.balance);
-
-        return sb.toString();
+    @Override
+    public String toString() {
+        return "Account{" + "number=" + number + ", name=" + name + ", balance=" + balance + ", rate=" + rate + '}';
     }
 
 }

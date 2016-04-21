@@ -4,34 +4,33 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>customersList</title>
+        <title>#{msg['customersList.head.title']}</title>
     </h:head>
     <h:body>
-        <h1>Liste des clients</h1>
-        <h:dataTable id="table1" value="Text" var="customer"
-                     border="0">
+        <h1>#{msg['customersList.body.title']}</h1>
+        <h:dataTable value="#{customersBean.customers}" var="customer" border="0">
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Numéro" />
+                    <h:outputText value="#{msg['customersList.column.number']}" />
                 </f:facet>
-                <h:outputText value="Text" />
+                <h:outputText value="#{customer.number}" />
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Prénom" />
+                    <h:outputText value="#{msg['customersList.column.fname']}" />
                 </f:facet>
-                <h:outputText value="#{item.price}" />
+                <h:outputText value="#{customer.firstName}" />
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Nom" />
+                    <h:outputText value="#{msg['customersList.column.lname']}" />
                 </f:facet>
-                <h:outputText value="#{item.price}" />
+                <h:outputText value="#{customer.lastName}" />
             </h:column>
         </h:dataTable>
+        <br />
         <h:form>
-            <h:commandButton value="Ajouter"
-                             action="#{shoppingCartBean.checkout}" />
+            <h:commandButton value="#{msg['customersList.commandButton']}" action="createCustomer.xhtml" />
         </h:form>
     </h:body>
 </html>

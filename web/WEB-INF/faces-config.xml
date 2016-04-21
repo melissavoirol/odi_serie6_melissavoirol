@@ -10,7 +10,7 @@
             <supported-locale>fr</supported-locale>
         </locale-config>
         <resource-bundle>
-            <base-name>ch.hearc.ig.odi.customeraccount.bundles.messages</base-name>
+            <base-name>ch.hearc.ig.odi.customeraccount.presentation.bundle.messages</base-name>
             <var>msg</var>
         </resource-bundle>
     </application>

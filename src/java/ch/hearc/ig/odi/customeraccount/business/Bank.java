@@ -1,6 +1,5 @@
 package ch.hearc.ig.odi.customeraccount.business;
 
-import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -63,11 +62,11 @@ public class Bank {
     }
 
     public Account getAccountByNumber(String number) {
-        return this.accounts.get(number);
+        return accounts.get(number);
     }
 
     public Customer getCustomerByNumber(int number) {
-        return this.customers.get(number);
+        return customers.get(number);
     }
 
     public Customer addCustomer(Integer number, String fn, String ln) {
@@ -76,21 +75,9 @@ public class Bank {
         return cust;
     }
 
-    public Individual addIndividual(Integer number, String fn, String ln, Date birthDate, String email) {
-        Individual ind = new Individual(number, fn, ln, birthDate, email);
-        customers.put(number, ind);
-        return ind;
-    }
-
-    public Company addCompany(Integer number, String companyName, String phone, String fax) {
-        Company comp = new Company(number, companyName, phone, fax);
-        customers.put(number, comp);
-        return comp;
-    }
-
     public void addAccount(String number, String name, double rate, Customer cust) {
         Account account = new Account(number, name, rate, cust);
-        accounts.put(number, account);
+        this.accounts.put(number, account);
         cust.addAccount(account);
     }
 
@@ -99,7 +86,7 @@ public class Bank {
         int nb = 0;
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Bank N°");
+        sb.append("Bank N° ");
         sb.append(this.number);
         sb.append("\n");
         sb.append("Name : ");
@@ -107,7 +94,7 @@ public class Bank {
         sb.append("\n");
         sb.append("Accounts : ");
         for (Account acc : this.accounts.values()) {
-            sb.append(acc.accToString());
+            sb.append(acc.toString());
             nb = nb + 1;
         }
         sb.append("\n");
@@ -122,7 +109,7 @@ public class Bank {
         Bank.nbAcc = 0;
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Bank N°");
+        sb.append("Bank N° ");
         sb.append(this.number);
         sb.append("\n");
         sb.append("Name : ");
@@ -130,7 +117,7 @@ public class Bank {
         sb.append("\n");
         sb.append("Accounts : ");
         for (Customer cust : this.customers.values()) {
-            sb.append(cust.custToString());
+            sb.append(cust.toString());
         }
         sb.append("\n");
         sb.append("Nombre de compte dans la banque : ");
