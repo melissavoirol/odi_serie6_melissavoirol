@@ -8,19 +8,19 @@
     <h:body>
         <h1>#{msg['createCustomer.body.title']}</h1>
         <h:form>
-            <h:outputLabel value="#{msg['createCustomer.input.number']}" />
-            <h:inputText value=" " />
+            <h:outputLabel value="#{msg['createCustomer.body.form.outputLabel.number']}" />
+            <h:inputText value="#{customerCreateBean.number}" required="true" requiredMessage="#{createCustomer.body.form.inputText.required.number}" />
             <br /><br />
-            <h:outputLabel value="#{msg['createCustomer.input.fname']}" />
-            <h:inputSecret value=" " />
+            <h:outputLabel value="#{msg['createCustomer.body.form.outputLabel.fname']}" />
+            <h:inputText value="#{customerCreateBean.firstName}" required="true" requiredMessage="#{createCustomer.body.form.inputText.required.fname}" />
             <br /><br />
-            <h:outputLabel value="#{msg['createCustomer.input.lname']}" />
-            <h:inputSecret value=" " />
+            <h:outputLabel value="#{msg['createCustomer.body.form.outputLabel.lname']}" />
+            <h:inputText value="#{customerCreateBean.lastName}" required="true" requiredMessage="#{createCustomer.body.form.inputText.required.lname}" />
             <br /><br />
-            <h:commandButton value="#{msg['createCustomer.commandButton.reset']}" action=" " />
-            <h:commandButton value="#{msg['createCustomer.commandButton.validate']}" action=" " />
-            <br /><br />
-            <h:commandButton value="#{msg['createCustomer.commandButton.cancel']}" action=" " />
+            <h:commandButton type="reset" value="#{msg['createCustomer.body.form.commandButton.reset']}" />
+            <h:commandButton value="#{msg['createCustomer.body.form.commandButton.validate']}" action="#{customerCreateBean.save()}" />            
         </h:form>
+        <br />
+        <h:button value="#{msg['createCustomer.body.form.commandButton.cancel']}" outcome="customersList" />        
     </h:body>
 </html>

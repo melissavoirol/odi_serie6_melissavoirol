@@ -11,26 +11,26 @@
         <h:dataTable value="#{customersBean.customers}" var="customer" border="0">
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="#{msg['customersList.column.number']}" />
+                    <h:outputText value="#{msg['customersList.body.dataTable.column.outputText.number']}" />
                 </f:facet>
                 <h:outputText value="#{customer.number}" />
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="#{msg['customersList.column.fname']}" />
+                    <h:outputText value="#{msg['customersList.body.dataTable.column.outputText.fname']}" />
                 </f:facet>
                 <h:outputText value="#{customer.firstName}" />
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="#{msg['customersList.column.lname']}" />
+                    <h:outputText value="#{msg['customersList.body.dataTable.column.outputText.lname']}" />
                 </f:facet>
                 <h:outputText value="#{customer.lastName}" />
             </h:column>
         </h:dataTable>
         <br />
         <h:form>
-            <h:commandButton value="#{msg['customersList.commandButton']}" action="createCustomer.xhtml" />
+            <h:commandButton value="#{msg['customersList.body.form.commandButton']}" action="createCustomer" />
         </h:form>
     </h:body>
 </html>
