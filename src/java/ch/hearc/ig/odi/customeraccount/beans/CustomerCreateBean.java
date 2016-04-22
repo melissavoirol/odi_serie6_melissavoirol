@@ -50,8 +50,9 @@ public class CustomerCreateBean {
         this.lastName = lastName;
     }
     
-    public void save() {
+    public String save() {
         services.saveCustomer(number, firstName, lastName);
+        return "validate";
     }
     
 }

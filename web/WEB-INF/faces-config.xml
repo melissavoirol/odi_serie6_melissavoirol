@@ -14,39 +14,19 @@
             <var>msg</var>
         </resource-bundle>
     </application>
-    <navigation-rule>
+    <!--<navigation-rule>
         <from-view-id>index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>addCustomer</from-outcome>
             <to-view-id>addCustomer.xhtml</to-view-id>
         </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <from-view-id>customersList.xhtml</from-view-id>
-        <navigation-case>
-            <from-action>createCustomer</from-action>
-            <to-view-id>createCustomer.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <!--<navigation-rule>
-        <from-view-id>createCustomer.xhtml</from-view-id>
-        <navigation-case>
-            <from-action>#{customerCreateBean.save()}</from-outcome>
-            <to-view-id>createCustomerOk.xhtml</to-view-id>
-        </navigation-case>
     </navigation-rule>-->
     <navigation-rule>
         <from-view-id>createCustomer.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>customersList</from-outcome>
-            <to-view-id>customersList.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <from-view-id>createCustomerOk.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>customersList</from-outcome>
-            <to-view-id>customersList.xhtml</to-view-id>
+            <from-action>#{customerCreateBean.save}</from-action>
+            <from-outcome>validate</from-outcome>
+            <to-view-id>createCustomerOk.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
