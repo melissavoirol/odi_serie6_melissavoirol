@@ -14,13 +14,6 @@
             <var>msg</var>
         </resource-bundle>
     </application>
-    <!--<navigation-rule>
-        <from-view-id>index.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>addCustomer</from-outcome>
-            <to-view-id>addCustomer.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>-->
     <navigation-rule>
         <from-view-id>createCustomer.xhtml</from-view-id>
         <navigation-case>
@@ -42,7 +35,7 @@
     <managed-bean>
         <managed-bean-name>customerDetailsBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.beans.CustomerDetailsBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
+        <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
         <managed-bean-name>accountDetailsBean</managed-bean-name>
