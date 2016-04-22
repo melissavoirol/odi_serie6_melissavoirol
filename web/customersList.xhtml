@@ -27,6 +27,13 @@
                 </f:facet>
                 <h:outputText value="#{customer.lastName}" />
             </h:column>
+            <h:column>
+                <h:form>
+                    <h:commandButton value="#{msg['customersList.body.dataTable.column.form.commandButton.details']}" action="customerDetails">
+                        <f:actionListener binding="#{customerDetailsBean.setCustomer(customer)}" />
+                    </h:commandButton>
+                </h:form>
+            </h:column>
         </h:dataTable>
         <br />
         <h:form>

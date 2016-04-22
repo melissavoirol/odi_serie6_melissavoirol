@@ -39,4 +39,14 @@
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.beans.CustomerCreateBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>customerDetailsBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.beans.CustomerDetailsBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>accountDetailsBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.beans.AccountDetailsBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
