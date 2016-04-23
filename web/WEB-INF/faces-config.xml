@@ -22,6 +22,14 @@
             <to-view-id>createCustomerOk.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>createAccount.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{accountCreateBean.save}</from-action>
+            <from-outcome>validate</from-outcome>
+            <to-view-id>createAccountOk.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     <managed-bean>
         <managed-bean-name>customersBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.beans.CustomersBean</managed-bean-class>
