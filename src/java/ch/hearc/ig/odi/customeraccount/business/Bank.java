@@ -75,10 +75,15 @@ public class Bank {
         return cust;
     }
 
-    public void addAccount(String number, String name, double rate, Customer cust) {
-        Account account = new Account(number, name, rate, cust);
-        this.accounts.put(number, account);
-        cust.addAccount(account);
+    public void addAccount(Account account, Customer customer) {
+        if (this.accounts.get(account.getNumber()) == null) {
+            this.accounts.put(account.getNumber(), account);
+            this.customers.get(customer.getNumber()).addAccount(account);
+        }
+    }
+
+    public void addAccount(String number, String name, double rate, Customer customer) {
+        this.addAccount(new Account(number, name, rate, customer), customer);
     }
 
     //Méthode toString()

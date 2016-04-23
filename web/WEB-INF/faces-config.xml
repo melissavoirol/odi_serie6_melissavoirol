@@ -53,6 +53,6 @@
     <managed-bean>
         <managed-bean-name>accountCreateBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.beans.AccountCreateBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
+        <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
 </faces-config>

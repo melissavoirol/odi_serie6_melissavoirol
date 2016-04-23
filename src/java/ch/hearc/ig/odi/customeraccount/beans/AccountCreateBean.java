@@ -2,7 +2,8 @@ package ch.hearc.ig.odi.customeraccount.beans;
 
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.services.Services;
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -11,8 +12,8 @@ import javax.inject.Named;
  * @author Melissa Voirol <melissa.voirol@he-arc.ch>
  */
 @Named(value = "accountCreateBean")
-@RequestScoped
-public class AccountCreateBean {
+@SessionScoped
+public class AccountCreateBean implements Serializable {
 
     @Inject
     Services services;
@@ -62,6 +63,9 @@ public class AccountCreateBean {
 
     public String save() {
         services.saveAccount(number, name, rate, customer);
+        this.number = null;
+        this.name = null;
+        this.rate = 0.0;
         return "validate";
     }
 
