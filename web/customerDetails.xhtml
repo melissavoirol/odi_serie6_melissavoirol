@@ -51,6 +51,10 @@
             </h:column>
         </h:dataTable>
         <br />
+        <h:form>
+            <h:commandButton value="#{msg['customerDetails.body.form.commandButton']}" action="createAccount" />
+        </h:form>
+        <br />
         <h:button value="#{msg['customerDetails.body.button.homepage']}" outcome="customersList" />  
     </h:body>
 </html>
